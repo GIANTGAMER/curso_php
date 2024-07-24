@@ -59,11 +59,10 @@ echo $soma1;
 echo "<br><br><br>";
 
 //soma de todos os impares de 1-100
-echo "1 a 100 impares <br><br>"
+echo "1 a 100 impares <br><br>";
 while ($i4 <= 100) {
     $soma2 += $i4;
     $i4 = $i4 + 2;
 }
-
-
+echo $soma2;
 ?>
