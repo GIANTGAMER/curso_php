@@ -4,3 +4,12 @@
 * git config --global user.email "gianmito.gianmito@gmail.com"
 * git clone https://github.com/GIANTGAMER/curso_php.git
 * sudo service apache2 start
+* git add .
+* git commit -m "--"
+* git push
+
+* pattern aulas
+
+<?php
+
+?>
