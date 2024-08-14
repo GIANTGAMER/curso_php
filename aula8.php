@@ -19,13 +19,24 @@ echo "<strong>Alfebeto invertido</strong> <br>" . implode(" - ", $ordenaralfabet
 
 echo "<br><br><br><br><br><br><br><br>";
 
-$face1 = 20;
+$face1 = 10;
 $face2 = 10;
-$face3 = 20;
+$face3 = 0;
 
-$equilatero = ($face1 = $face2 = $face3);
-$isoceles = 0;
-$escaleno
+$triângulo = [$face1, $face2, $face3];
+
+if ($triângulo[2]==0||$triângulo[1]==0||$triângulo[0]==0){
+    echo "Os valores informados não formam um triângulo";
+
+}  elseif ($triângulo[0] == $triângulo[1] && $triângulo[0] == $triângulo[2]){
+    echo "O triângulo é equilátero.";
+    
+}elseif ($triângulo[0] == $triângulo[1] || $triângulo[0] == $triângulo[2]){
+    echo "O triângulo é isoceles";
+
+} elseif ($triângulo[0] != $triângulo[1] && $triângulo[0] != $triângulo[2]){
+    echo "O triângulo é escaleno";
+} 
 
 
 
