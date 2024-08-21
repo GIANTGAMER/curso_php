@@ -27,14 +27,33 @@ echo $resultado;
 
 echo "<br><br><br><br>";
 
+function Banco ($opera, $valor3, $extrato){
+   $saldo = 1000;
+   $return = 0;
 
-function banco ($dep, $saque, $extrato){
-    $resultado = 0;
-    $saldo = 2500;
-    if ($dep>$saque){
-        $saldo+($dep-$saque);
-    }
-    return $resultado;
+   if ($opera == "+"){
+      $return = $saldo + $valor3;
+      return $return;
+   }
+
+   if ($opera == "-"){
+      $return = $saldo - $valor3;
+      return $return;
+   }
+
+   if ($extrato == "calabresa"){
+      return $saldo;
+   }
 }
+
+$opera = "+";
+$valor3 = 900;
+$extrato;
+
+echo Banco($opera, $valor3, $extrato);
+
+
+
+
 
 ?>
