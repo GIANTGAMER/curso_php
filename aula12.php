@@ -24,4 +24,3 @@ $TellCell = "54991595837";
 echo addMask($TellCell, $mascara);
 
 
-?>
