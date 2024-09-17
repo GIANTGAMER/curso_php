@@ -3,7 +3,7 @@
 class Banco {
     private $saldo = 1500;
     public $extrato;
-    public $saldoInsuficiente= "Valor inserido inválido, verifique se possui alguma letra ou está vazio.";
+    public $saldoInsuficiente= "O valor inserido é maior que seu saldo atual.";
     public $valorinvalido= "Valor inserido invalido.";
     public $extratoInvalido= 0;
 
@@ -12,8 +12,8 @@ class Banco {
         $valor = preg_replace($padrao, "", $valor);
 
         if (empty($valor)){
-            $this->extrato = $this->saldoInsuficiente;
-        }elseif ($this->saldo<$valor){
+            $this->extrato = $this->valorinvalido;
+        }elseif ($this->saldo < $valor){
             $this->extrato = $this->saldoInsuficiente;
         } else {
             $this->extrato = $this->saldo - $valor;
@@ -27,7 +27,7 @@ class Banco {
         if (empty($valor)){
             $this->extrato = $this->valorinvalido;
         } elseif ($valor<0){
-            $this->extrato = $this->saldoInsuficiente;
+            $this->extrato = $this->valorinvalido;
         } else {
             $this->extrato = $this->saldo + $valor;
         }
@@ -44,9 +44,12 @@ class Banco {
         if (empty($valor)){
             $this->extrato = $this->valorinvalido;
         } elseif ($valor<0){
+            $this->extrato = $this->valorinvalido;
+        } elseif ($valor > $this->saldo){
             $this->extrato = $this->saldoInsuficiente;
         } else {
-            $this->extrato = $this->saldo + $valor;
+            $resultado = $this->saldo-$valor;
+            $this->extrato = "O valor de $valor foi transferido para $destino com sucesso, seu saldo atual é de $resultado";
         }
     }
 
@@ -54,7 +57,7 @@ class Banco {
 }
 
 $banco = new Banco();
-$banco->deposito(0);
+$banco->deposito(100);
 echo $banco->extrato;
 
 ?>

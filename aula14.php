@@ -25,6 +25,5 @@ $calculadora->multiplicar(1, 3);
 echo $calculadora->resultado;
 
 
-echo "<br><br>";
-echo "ain";
+
 ?>
