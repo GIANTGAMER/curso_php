@@ -57,7 +57,7 @@ class Banco {
 }
 
 $banco = new Banco();
-$banco->deposito(100);
+$banco->pix(300, "Fahel");
 echo $banco->extrato;
 
 ?>
